@@ -7,39 +7,39 @@ This document defines the complete engineering architecture, technology selectio
 ## 1. High-Level Architecture Overview
 
 ```mermaid
-graph TD
-    subgraph Client Tier [Mobile Client - iOS & Android]
-        UI[Expo Router / NativeWind v4 Tailwind]
-        ClientState[Zustand + MMKV Offline Storage]
-        QueryCache[TanStack React Query v5]
-        NativeAPIs[Expo Camera / Location / Biometrics / Notifications]
+flowchart TD
+    subgraph ClientTier["Mobile Client (iOS & Android)"]
+        UI["Expo Router / NativeWind v4 Tailwind"]
+        ClientState["Zustand + MMKV Offline Storage"]
+        QueryCache["TanStack React Query v5"]
+        NativeAPIs["Expo Camera / Location / Biometrics / Notifications"]
     end
 
-    subgraph Edge & API Tier [Supabase Edge Functions / Gateway]
-        Gateway[Edge Gateway / Reverse Proxy]
-        AuthHook[Auth & Phone OTP Hook]
-        EscrowEngine[Escrow & Split Settlement Service]
-        DocEngine[Tenancy Agreement PDF Generator]
+    subgraph EdgeTier["Supabase Edge Functions / Gateway"]
+        Gateway["Edge Gateway / Reverse Proxy"]
+        AuthHook["Auth & Phone OTP Hook"]
+        EscrowEngine["Escrow & Split Settlement Service"]
+        DocEngine["Tenancy Agreement PDF Generator"]
     end
 
-    subgraph Data & Storage Tier [Supabase Managed Infrastructure]
-        Postgres[(PostgreSQL 16 + PostGIS Spatial Engine)]
-        RLS[Row Level Security Enforcement]
-        RealtimeBus[Supabase Realtime WebSockets]
-        StorageCDN[Encrypted Storage & CDN: Media / Agreements]
+    subgraph DataTier["Supabase Managed Infrastructure"]
+        Postgres[("PostgreSQL 16 + PostGIS Spatial Engine")]
+        RLS["Row Level Security Enforcement"]
+        RealtimeBus["Supabase Realtime WebSockets"]
+        StorageCDN["Encrypted Storage & CDN: Media / Agreements"]
     end
 
-    subgraph External Nigerian Infrastructure Rails
-        KYC[Prembly / Dojah: NIN, BVN, CAC]
-        Payments[Paystack / Monnify: Dynamic Accounts, Cards, Splits]
-        SMS[Termii: SMS OTP & Transactional WhatsApp]
-        Maps[Google Maps / Mapbox Geocoding]
+    subgraph ExternalRails["External Nigerian Infrastructure Rails"]
+        KYC["Prembly / Dojah: NIN, BVN, CAC"]
+        Payments["Paystack / Monnify: Dynamic Accounts, Cards, Splits"]
+        SMS["Termii: SMS OTP & Transactional WhatsApp"]
+        Maps["Google Maps / Mapbox Geocoding"]
     end
 
-    Client Tier <-->|HTTPS / REST / GraphQL| Edge & API Tier
-    Client Tier <-->|WebSockets| RealtimeBus
-    Edge & API Tier <--> Data & Storage Tier
-    Edge & API Tier <--> External Nigerian Infrastructure Rails
+    ClientTier <-->|HTTPS / REST / GraphQL| EdgeTier
+    ClientTier <-->|WebSockets| RealtimeBus
+    EdgeTier <--> DataTier
+    EdgeTier <--> ExternalRails
 ```
 
 ---
@@ -54,6 +54,7 @@ graph TD
 | **Language** | **TypeScript** | 5.3+ (Strict Mode) | End-to-end type safety shared with backend database schema definitions; zero runtime type regressions. |
 | **Routing** | **Expo Router** | v4 | File-based, deeply linkable routing matching Next.js paradigms; first-class support for native stacks, tabs, and modals. |
 | **Styling & Design System** | **NativeWind** | v4 (Tailwind CSS) | Zero-runtime CSS-in-JS overhead; shared responsive design tokens across mobile screens and future web dashboards. |
+| **Icons Library** | **Phosphor Icons React Native** | v6.1.2 | Open-source icon library for product design systems. |
 | **Server State & Caching** | **@tanstack/react-query** | v5 | Automatic background refetching, cache invalidation, and optimistic UI updates for instant booking interactions. |
 | **Client / Local State** | **Zustand** | v4.5+ | Minimalist, unopinionated global state (auth session, search filter drafts) with zero boilerplate. |
 | **Offline Key-Value Store** | **react-native-mmkv** | v2.12+ | C++ backed key-value persistence, up to 30x faster than standard AsyncStorage; used for session tokens and cached search filters. |
@@ -97,13 +98,13 @@ sequenceDiagram
     Agent->>Edge: Submit NIN / CAC Number + Live Selfie
     Edge->>Prembly: Validate Identity with NIMC
     Prembly-->>Edge: Identity Confirmed
-    Edge-->>Agent: Award 'Verified Agent' Badge
+    Edge-->>Agent: Award Verified Agent Badge
 
     Note over Tenant,Paystack: 3. Inspection Booking & Escrow
     Tenant->>Edge: Book Inspection Slot
-    Edge->>Paystack: Create Escrow Commitment Transaction (₦3,000)
+    Edge->>Paystack: Create Escrow Commitment Transaction (NGN 3,000)
     Tenant->>Paystack: Complete Payment via Card / Virtual Account
-    Paystack-->>Edge: Payment Webhook Received (Status: 'held')
+    Paystack-->>Edge: Payment Webhook Received (Status: held)
 
     Note over Tenant,Agent: 4. Inspection GPS Check-in
     Tenant->>Edge: Check in at Property (GPS Coordinates)
@@ -120,9 +121,9 @@ sequenceDiagram
    - **Dedicated Virtual Accounts (Dynamic NIP):** Instant bank transfer generation for each tenancy and inspection transaction.
    - **Card Payments:** Direct processing of Nigerian debit cards (Mastercard, Visa, Verve).
    - **Paystack Subaccounts & Split Payments:** Automated multi-split payout upon move-in key handover:
-     - 90% Net Rent $\rightarrow$ Landlord subaccount.
-     - 5% Capped Commission $\rightarrow$ Verified Agent subaccount.
-     - 5% Platform Fee $\rightarrow$ Krent operational account.
+     - 90% Net Rent → Landlord subaccount.
+     - 5% Capped Commission → Verified Agent subaccount.
+     - 5% Platform Fee → Krent operational account.
    - **Holding Escrow Account:** Funds are locked in a designated settlement trust until tenant submits physical key confirmation.
 
 3. **Telecommunications & Transactional Alerts (Termii):**
@@ -139,19 +140,19 @@ sequenceDiagram
 
 ```mermaid
 erDiagram
-    PROFILES ||--o{ PROPERTIES : owns_or_manages
-    PROFILES ||--o{ INSPECTIONS : books_as_tenant
-    PROFILES ||--o{ INSPECTIONS : hosts_as_agent
-    PROPERTIES ||--o{ INSPECTIONS : targets
-    PROPERTIES ||--o{ TENANCIES : subject_of
-    PROFILES ||--o{ TENANCIES : rents_as_tenant
-    PROFILES ||--o{ TENANCIES : lets_as_landlord
-    TENANCIES ||--o{ ESCROW_TRANSACTIONS : funds
-    INSPECTIONS ||--o{ ESCROW_TRANSACTIONS : commits
+    PROFILES ||--o{ PROPERTIES : "owns or manages"
+    PROFILES ||--o{ INSPECTIONS : "books as tenant"
+    PROFILES ||--o{ INSPECTIONS : "hosts as agent"
+    PROPERTIES ||--o{ INSPECTIONS : "targets"
+    PROPERTIES ||--o{ TENANCIES : "subject of"
+    PROFILES ||--o{ TENANCIES : "rents as tenant"
+    PROFILES ||--o{ TENANCIES : "lets as landlord"
+    TENANCIES ||--o{ ESCROW_TRANSACTIONS : "funds"
+    INSPECTIONS ||--o{ ESCROW_TRANSACTIONS : "commits"
 
     PROFILES {
         uuid id PK
-        string phone_number UK
+        string phone_number "unique"
         string full_name
         string role
         string verification_status
@@ -282,13 +283,13 @@ krent-mobile/
 
 ```mermaid
 flowchart LR
-    Dev[Developer Commit] --> Lint[ESLint & TypeCheck]
-    Lint --> Test[Jest & Component Tests]
-    Test --> GitHub[GitHub Actions CI]
-    GitHub --> EASBuild[EAS Build Cloud]
-    EASBuild --> Internal[Internal TestFlight / Google Play Beta]
-    Internal --> EASSubmit[EAS Submit to Production App Stores]
-    EASBuild -.-> OTA[EAS Update: Instant Over-The-Air Bug Fixes]
+    Dev["Developer Commit"] --> Lint["ESLint & TypeCheck"]
+    Lint --> Test["Jest & Component Tests"]
+    Test --> GitHub["GitHub Actions CI"]
+    GitHub --> EASBuild["EAS Build Cloud"]
+    EASBuild --> Internal["Internal TestFlight / Google Play Beta"]
+    Internal --> EASSubmit["EAS Submit to Production App Stores"]
+    EASBuild -.-> OTA["EAS Update: Instant Over-The-Air Bug Fixes"]
 ```
 
 - **Build System:** **EAS (Expo Application Services) Build** running on dedicated macOS and Linux cloud runners.

@@ -16,19 +16,19 @@ The Nigerian residential rental market—anchored in high-density urban centers 
 ```mermaid
 quadrantChart
     title Nigerian PropTech Landscape: Verification vs Payment Flexibility
-    x-axis Low Verification / Unregulated --> High Verification / KYC-Backed
-    y-axis Rigid Annual Payments --> Flexible / Escrow / Monthly Installments
-    quadrant-1 "Target Space: Krent / Modern Proptech"
+    x-axis Low Verification --> High Verification
+    y-axis Rigid Annual Payments --> Flexible Installments
+    quadrant-1 "Target Space: Krent / Modern PropTech"
     quadrant-2 "Niche Managed Rentals"
     quadrant-3 "Legacy Classifieds (High Scam Risk)"
     quadrant-4 "Corporate Developer Portals"
-    "Nigeria Property Centre": [0.25, 0.15]
-    "PropertyPro.ng": [0.30, 0.20]
-    "Jiji Real Estate": [0.10, 0.10]
-    "SmallSmall (RentSmallSmall)": [0.80, 0.85]
-    "Spleet": [0.75, 0.90]
-    "BuyLetLive": [0.70, 0.25]
-    "Target Platform": [0.88, 0.82]
+    Nigeria Property Centre: [0.25, 0.15]
+    PropertyPro.ng: [0.30, 0.20]
+    Jiji Real Estate: [0.10, 0.10]
+    SmallSmall: [0.80, 0.85]
+    Spleet: [0.75, 0.90]
+    BuyLetLive: [0.70, 0.25]
+    Krent: [0.88, 0.82]
 ```
 
 ### Detailed Competitor Breakdown
@@ -115,5 +115,5 @@ Here is a strategic selection of alternative brand names tailored for Nigerian r
 - **Brand Origin:** Blend of **Key** + **Rent** (Unlocking seamless, verified shelter).
 - **Phonetics:** Single syllable, sharp, modern, memorable (comparable to modern fintechs like Kuda, Klarna, Stripe).
 - **Conversational Usage:** *"Just Krent it"*, *"Found my new flat on Krent"*, *"Rent without the wahala"*.
-- **Detailed Brand Architecture:** Detailed in [BRAND_STORY.md](../Krent/BRAND_STORY.md).
+- **Detailed Brand Architecture:** Detailed in [BRAND_STORY.md](./BRAND_STORY.md).
 

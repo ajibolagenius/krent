@@ -16,11 +16,11 @@ The Nigerian residential rental market (particularly in high-density commercial 
 
 ```mermaid
 flowchart LR
-    A[Renter / Tenant] <-->|Browse, Inspect, Escrow Rent| P[Krent Platform]
-    B[Verified Landlord] <-->|List Property, Receive Payouts| P
-    C[Accredited Agent] <-->|Managed Listings, Capped Commission| P
-    P <-->|KYC / Identity| D[Identity Providers: Prembly / Dojah / Smile ID]
-    P <-->|Payments / RNPL| E[Fintech: Paystack / Monnify / Credit Partners]
+    A["Renter / Tenant"] <-->|Browse, Inspect, Escrow Rent| P["Krent Platform"]
+    B["Verified Landlord"] <-->|List Property, Receive Payouts| P
+    C["Accredited Agent"] <-->|Managed Listings, Capped Commission| P
+    P <-->|KYC / Identity| D["Identity Providers: Prembly / Dojah / Smile ID"]
+    P <-->|Payments / RNPL| E["Fintech: Paystack / Monnify / Credit Partners"]
 ```
 
 ### 2.1 Tenant / Renter
@@ -100,31 +100,31 @@ Listings capture Nigeria-specific attributes that dictate tenant quality of life
 ## 4. Technical Architecture & Tech Stack
 
 ```mermaid
-graph TD
-    subgraph Mobile Client [Expo React Native App]
-        UI[Expo Router / NativeWind v4]
-        State[TanStack Query + Zustand]
-        Offline[MMKV Storage]
-        Media[expo-image / expo-camera]
+flowchart TD
+    subgraph MobileClient["Mobile Client (Expo React Native App)"]
+        UI["Expo Router / NativeWind v4"]
+        State["TanStack Query + Zustand"]
+        Offline["MMKV Storage"]
+        Media["expo-image / expo-camera"]
     end
 
-    subgraph Backend Services [Supabase / Node.js Microservices]
-        Auth[Supabase Auth / Termii OTP]
-        DB[(PostgreSQL + PostGIS)]
-        Storage[Supabase Storage / Cloudinary]
-        Realtime[Supabase Realtime / WebSockets]
-        EdgeFn[Deno / Node.js Edge Functions]
+    subgraph BackendServices["Backend Services (Supabase BaaS)"]
+        Auth["Supabase Auth / Termii OTP"]
+        DB[("PostgreSQL + PostGIS")]
+        Storage["Supabase Storage / Cloudinary"]
+        Realtime["Supabase Realtime / WebSockets"]
+        EdgeFn["Deno / Node.js Edge Functions"]
     end
 
-    subgraph External Nigerian APIs
-        KYC[Prembly / Dojah: NIN / BVN / CAC]
-        Pay[Paystack / Monnify: Transfers, Escrow, Splits]
-        SMS[Termii: OTP & Transactional SMS]
-        Maps[Google Maps / Mapbox Geocoding]
+    subgraph ExternalAPIs["External Nigerian APIs"]
+        KYC["Prembly / Dojah: NIN / BVN / CAC"]
+        Pay["Paystack / Monnify: Transfers, Escrow, Splits"]
+        SMS["Termii: OTP & Transactional SMS"]
+        Maps["Google Maps / Mapbox Geocoding"]
     end
 
-    Mobile Client --> Backend Services
-    Backend Services --> External Nigerian APIs
+    MobileClient --> BackendServices
+    BackendServices --> ExternalAPIs
 ```
 
 ### 4.1 Client-Side Stack (Mobile)

@@ -35,18 +35,20 @@ With **Krent**, the entire dynamic is inverted:
 
 ```mermaid
 flowchart TD
-    M[Our Mission] -->|Empowers| T[Dignified, Transparent & Scam-Free Tenancy]
-    V[Our Vision] -->|Builds| P[The Trust & Financial Protocol for African Living]
+    M["Our Mission"] -->|Empowers| T["Dignified, Transparent & Scam-Free Tenancy"]
+    V["Our Vision"] -->|Builds| P["The Trust & Financial Protocol for African Living"]
     
-    subgraph Core Pillars
-        P1[Radical Transparency]
-        P2[Ground-Truth Data]
-        P3[Ironclad Escrow]
-        P4[Asset-Light Financial Flexibility]
+    subgraph CorePillars["Core Pillars"]
+        P1["Radical Transparency"]
+        P2["Ground-Truth Data"]
+        P3["Ironclad Escrow"]
+        P4["Asset-Light Financial Flexibility"]
     end
     
-    T --> P1 & P2
-    P --> P3 & P4
+    T --> P1
+    T --> P2
+    P --> P3
+    P --> P4
 ```
 
 ### Our Mission

@@ -10,20 +10,20 @@ This document defines the engineering sprints, third-party Nigerian API integrat
 gantt
     title Krent Engineering Roadmap
     dateFormat  YYYY-MM-DD
-    section Phase 1: Foundation
+    section Phase 1 - Foundation
     Expo Scaffold & Navigation Setup   :2026-09-15, 7d
     Supabase Schema & Auth Integration :2026-09-22, 7d
     Property Card & Feed UI            :2026-09-29, 7d
-    section Phase 2: Local Discovery & KYC
+    section Phase 2 - Local Discovery & KYC
     Hyper-Local Filter Sheet           :2026-10-06, 7d
     Prembly/Dojah KYC Engine           :2026-10-13, 7d
     Transparent Cost Calculator        :2026-10-20, 7d
-    section Phase 3: Booking & Payments
+    section Phase 3 - Booking & Payments
     Inspection Booking & Escrow        :2026-10-27, 7d
     In-App Chat & Masked Calling       :2026-11-03, 7d
     Paystack Payment Splits & Escrow   :2026-11-10, 7d
     Digital Tenancy E-Signing          :2026-11-17, 7d
-    section Phase 4: Production & RNPL
+    section Phase 4 - Production & RNPL
     RNPL Installment Partnership       :2026-11-24, 10d
     Internal QA & Security Audit       :2026-12-04, 7d
     App Store & Play Store Staging     :2026-12-11, 7d
@@ -43,7 +43,7 @@ gantt
 - Configure `@tanstack/react-query` and `zustand` stores.
 
 ### Sprint 2: Database, RLS & Authentication
-- Execute [DATABASE_SCHEMA.sql](../Krent/DATABASE_SCHEMA.sql) on Supabase.
+- Execute [DATABASE_SCHEMA.sql](./DATABASE_SCHEMA.sql) on Supabase.
 - Integrate **Termii** SMS OTP service for Nigerian carrier delivery (+234 MTN, Airtel, Glo, 9mobile).
 - Implement biometric authentication (FaceID / Fingerprint) using `expo-local-authentication`.
 - Build user role selector during onboarding (`Looking to Rent` vs `Landlord / Accredited Agent`).
