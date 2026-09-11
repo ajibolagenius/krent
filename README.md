@@ -9,6 +9,7 @@ Welcome to the **FindRent** documentation hub. FindRent is a trust-first mobile 
 | Document | Description |
 | :--- | :--- |
 | **[FINDRENT_SPECIFICATION.md](../FindRent/FINDRENT_SPECIFICATION.md)** | Complete product scope, personas, anti-fraud KYC engine, hyper-local filter matrix, escrow system, and Expo (React Native) technical architecture. |
+| **[MARKET_SURVEY_AND_BRANDING.md](../FindRent/MARKET_SURVEY_AND_BRANDING.md)** | Nigerian proptech market survey, competitor pros/cons (NPC, PropertyPro, Spleet, SmallSmall, Fibre), white-space analysis, and brand name recommendations. |
 | **[DATABASE_SCHEMA.sql](../FindRent/DATABASE_SCHEMA.sql)** | Production-ready PostgreSQL + PostGIS database schema tailored for Supabase, including RLS policies, indexing, and spatial query functions. |
 | **[PROJECT_ROADMAP.md](../FindRent/PROJECT_ROADMAP.md)** | Step-by-step 4-phase implementation plan, third-party Nigerian API integration guide (Paystack, Termii, Prembly/Dojah), and sprint deliverables. |
 
