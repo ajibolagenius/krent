@@ -1,6 +1,6 @@
-# FindRent (Nigeria) — Implementation Roadmap & Integration Guide
+# Krent (Nigeria) — Implementation Roadmap & Integration Guide
 
-This document defines the engineering sprints, third-party Nigerian API integration playbooks, and deployment milestones for the **FindRent Mobile App** (React Native / Expo + Supabase).
+This document defines the engineering sprints, third-party Nigerian API integration playbooks, and deployment milestones for the **Krent Mobile App** (React Native / Expo + Supabase).
 
 ---
 
@@ -8,7 +8,7 @@ This document defines the engineering sprints, third-party Nigerian API integrat
 
 ```mermaid
 gantt
-    title FindRent Engineering Roadmap
+    title Krent Engineering Roadmap
     dateFormat  YYYY-MM-DD
     section Phase 1: Foundation
     Expo Scaffold & Navigation Setup   :2026-09-15, 7d
@@ -34,7 +34,7 @@ gantt
 ## 🛠 Phase Details & Action Items
 
 ### Sprint 1: Project Scaffolding & Design System
-- Initialize Expo app with TypeScript: `npx create-expo-app@latest findrent-mobile --template blank-typescript`.
+- Initialize Expo app with TypeScript: `npx create-expo-app@latest krent-mobile --template blank-typescript`.
 - Configure `expo-router` for file-based navigation (tabs + modal stacks).
 - Configure `nativewind` (Tailwind CSS v4) with Nigeria-first tokens:
   - Brand Primary (Emerald/Green palette reflecting Nigerian trust & growth).
@@ -43,7 +43,7 @@ gantt
 - Configure `@tanstack/react-query` and `zustand` stores.
 
 ### Sprint 2: Database, RLS & Authentication
-- Execute [DATABASE_SCHEMA.sql](../FindRent/DATABASE_SCHEMA.sql) on Supabase.
+- Execute [DATABASE_SCHEMA.sql](../Krent/DATABASE_SCHEMA.sql) on Supabase.
 - Integrate **Termii** SMS OTP service for Nigerian carrier delivery (+234 MTN, Airtel, Glo, 9mobile).
 - Implement biometric authentication (FaceID / Fingerprint) using `expo-local-authentication`.
 - Build user role selector during onboarding (`Looking to Rent` vs `Landlord / Accredited Agent`).
@@ -114,8 +114,8 @@ const sendTermiiOtp = async (phoneNumber: string, otpCode: string) => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       to: formattedPhone,
-      from: 'FindRent',
-      sms: `Your FindRent verification code is ${otpCode}. Valid for 10 minutes.`,
+      from: 'Krent',
+      sms: `Your Krent verification code is ${otpCode}. Valid for 10 minutes.`,
       type: 'plain',
       channel: 'generic',
       api_key: process.env.TERMII_API_KEY,

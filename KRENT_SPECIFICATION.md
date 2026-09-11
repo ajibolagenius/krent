@@ -1,4 +1,4 @@
-# FindRent (Nigeria) — Product Scope, Architecture & Technical Specification
+# Krent (Nigeria) — Product Scope, Architecture & Technical Specification
 
 ## 1. Executive Summary & Market Problem
 
@@ -8,7 +8,7 @@ The Nigerian residential rental market (particularly in high-density commercial 
 - **Rigid Upfront Payment Demands:** Standard tenancy agreements mandate 1–2 years of rent upfront, conflicting with the monthly cash-flow reality of most salary earners and entrepreneurs.
 - **Crucial Local Quality-of-Life Variables:** Critical amenities in Nigeria are absent from generic real estate portals: power supply reliability (Band A–D disco ratings, central diesel generator hours), flood susceptibility during the rainy season, potable/treated water availability, and gated estate security protocol.
 
-**FindRent** is designed as a trust-first, tech-enabled rental marketplace and tenancy management platform tailored specifically to the realities of Nigeria's real estate ecosystem.
+**Krent** is designed as a trust-first, tech-enabled rental marketplace and tenancy management platform tailored specifically to the realities of Nigeria's real estate ecosystem.
 
 ---
 
@@ -16,7 +16,7 @@ The Nigerian residential rental market (particularly in high-density commercial 
 
 ```mermaid
 flowchart LR
-    A[Renter / Tenant] <-->|Browse, Inspect, Escrow Rent| P[FindRent Platform]
+    A[Renter / Tenant] <-->|Browse, Inspect, Escrow Rent| P[Krent Platform]
     B[Verified Landlord] <-->|List Property, Receive Payouts| P
     C[Accredited Agent] <-->|Managed Listings, Capped Commission| P
     P <-->|KYC / Identity| D[Identity Providers: Prembly / Dojah / Smile ID]
@@ -52,7 +52,7 @@ flowchart LR
 - **Trust Badges:**
   - `Verified Landlord` (Ownership documents checked).
   - `Accredited Agent` (NIN + CAC / Professional Body validated).
-  - `Inspected by FindRent` (Physical inspection conducted by FindRent field team or geotagged video walkthrough).
+  - `Inspected by Krent` (Physical inspection conducted by Krent field team or geotagged video walkthrough).
 
 ### 3.2 Hyper-Local Nigerian Discovery & Filtering Engine
 Listings capture Nigeria-specific attributes that dictate tenant quality of life:
@@ -67,7 +67,7 @@ Listings capture Nigeria-specific attributes that dictate tenant quality of life
 
 ### 3.3 Inspection Scheduling & Anti-Extortion Protocol
 - **Issue Solved:** Elimination of illegal "registration/inspection fees" collected by street agents with no intention of leasing.
-- **FindRent Mechanism:**
+- **Krent Mechanism:**
   - Scheduled booking slots directly in-app.
   - Inspection Escrow: A nominal commitment fee (e.g., ₦2,000 – ₦5,000) is held in escrow.
   - If the agent fails to show or the listing was fraudulent, the fee is instantly refunded to the tenant and the agent's rating/badge is docked.
@@ -90,7 +90,7 @@ Listings capture Nigeria-specific attributes that dictate tenant quality of life
   - USSD & Direct Debit Mandates (NIBSS e-Bills / Paystack recurring).
 - **Holding Deposit Escrow:**
   - Funds are held in a secure trust escrow account until the tenant conducts the final move-in walkthrough and accepts physical keys.
-  - Payouts are systematically split: Landlord receives net rent; Agent receives capped commission; FindRent retains platform facilitation fee.
+  - Payouts are systematically split: Landlord receives net rent; Agent receives capped commission; Krent retains platform facilitation fee.
 - **RNPL / Flexible Monthly Rent:**
   - Integration with licensed microfinance / credit partners (e.g., Carbon, Credit Direct, FairMoney) or native salary-deduction engine.
   - Landlord receives 100% full annual rent upfront; tenant pays monthly installments via automated direct debit.
@@ -142,7 +142,7 @@ graph TD
 - **Core Platform:** **Supabase** (Managed PostgreSQL) or custom **NestJS** backend.
 - **Geospatial Engine:** **PostGIS** extension on PostgreSQL for radius-based neighborhood searches (e.g., "Find 2-bed apartments within 5km of Admiralty Way, Lekki").
 - **Row-Level Security (RLS):** Granular access policies ensuring tenants only see approved listings and agents only edit their own portfolio.
-- **Media Processing:** Cloudinary or Supabase Storage with image compression, EXIF coordinate verification, and watermark stamping (e.g., "FindRent Verified Property").
+- **Media Processing:** Cloudinary or Supabase Storage with image compression, EXIF coordinate verification, and watermark stamping (e.g., "Krent Verified Property").
 
 ### 4.3 Database Schema Blueprint (PostgreSQL / Supabase)
 
@@ -239,7 +239,7 @@ CREATE TABLE tenancies (
 ## 5. Mobile App Project Layout (Expo + TypeScript)
 
 ```
-findrent-mobile/
+krent-mobile/
 ├── app/                          # Expo Router File-Based Routing
 │   ├── (auth)/                   # Authentication flows
 │   │   ├── sign-in.tsx           # Phone / Email entry

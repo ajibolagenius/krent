@@ -1,5 +1,5 @@
 -- ==============================================================================
--- FindRent (Nigeria) — Database Schema & Security Policies (Supabase / PostgreSQL)
+-- Krent (Nigeria) — Database Schema & Security Policies (Supabase / PostgreSQL)
 -- ==============================================================================
 
 -- 1. Enable Required Extensions

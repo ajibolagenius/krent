@@ -1,4 +1,4 @@
-# FindRent (Nigeria) — Comprehensive Market Survey, Competitive Analysis & Brand Strategy
+# Krent (Nigeria) — Comprehensive Market Survey, Competitive Analysis & Brand Strategy
 
 ## 1. Nigerian Rental Market Context & Opportunity
 
@@ -18,7 +18,7 @@ quadrantChart
     title Nigerian PropTech Landscape: Verification vs Payment Flexibility
     x-axis Low Verification / Unregulated --> High Verification / KYC-Backed
     y-axis Rigid Annual Payments --> Flexible / Escrow / Monthly Installments
-    quadrant-1 "Target Space: FindRent / Modern Proptech"
+    quadrant-1 "Target Space: Krent / Modern Proptech"
     quadrant-2 "Niche Managed Rentals"
     quadrant-3 "Legacy Classifieds (High Scam Risk)"
     quadrant-4 "Corporate Developer Portals"
@@ -106,3 +106,14 @@ Here is a strategic selection of alternative brand names tailored for Nigerian r
 1. 🥇 **Krent** — Best for a sleek, high-growth mobile fintech/proptech hybrid (short, punchy, easily brandable as "Krent it").
 2. 🥈 **VeriRent** — Best for directly conquering the market's biggest fear: unverified agents and listing scams.
 3. 🥉 **IleMi** — Best for building an authentic, community-loved Nigerian brand with immense emotional connection.
+
+---
+
+## 7. Formal Brand Selection: Krent
+
+**Selected Name:** **Krent**
+- **Brand Origin:** Blend of **Key** + **Rent** (Unlocking seamless, verified shelter).
+- **Phonetics:** Single syllable, sharp, modern, memorable (comparable to modern fintechs like Kuda, Klarna, Stripe).
+- **Conversational Usage:** *"Just Krent it"*, *"Found my new flat on Krent"*, *"Rent without the wahala"*.
+- **Detailed Brand Architecture:** Detailed in [BRAND_STORY.md](file:///Users/ajibolagenius/Desktop/Krent/BRAND_STORY.md).
+

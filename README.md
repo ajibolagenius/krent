@@ -1,6 +1,8 @@
-# FindRent (Nigeria) — Mobile App Documentation
+# Krent (Nigeria) — Mobile App Documentation
 
-Welcome to the **FindRent** documentation hub. FindRent is a trust-first mobile rental marketplace and tenancy management platform engineered specifically for the Nigerian residential real estate landscape (Lagos, Abuja, Port Harcourt, Ibadan, etc.).
+Welcome to the **Krent** documentation hub. **Krent** (*Key + Rent*) is a trust-first mobile rental marketplace and tenancy management platform engineered specifically for the Nigerian residential real estate landscape (Lagos, Abuja, Port Harcourt, Ibadan, etc.).
+
+> *"Keys in hand. Peace of mind. Rent without the wahala."*
 
 ---
 
@@ -8,10 +10,11 @@ Welcome to the **FindRent** documentation hub. FindRent is a trust-first mobile 
 
 | Document | Description |
 | :--- | :--- |
-| **[FINDRENT_SPECIFICATION.md](../FindRent/FINDRENT_SPECIFICATION.md)** | Complete product scope, personas, anti-fraud KYC engine, hyper-local filter matrix, escrow system, and Expo (React Native) technical architecture. |
-| **[MARKET_SURVEY_AND_BRANDING.md](../FindRent/MARKET_SURVEY_AND_BRANDING.md)** | Nigerian proptech market survey, competitor pros/cons (NPC, PropertyPro, Spleet, SmallSmall, Fibre), white-space analysis, and brand name recommendations. |
-| **[DATABASE_SCHEMA.sql](../FindRent/DATABASE_SCHEMA.sql)** | Production-ready PostgreSQL + PostGIS database schema tailored for Supabase, including RLS policies, indexing, and spatial query functions. |
-| **[PROJECT_ROADMAP.md](../FindRent/PROJECT_ROADMAP.md)** | Step-by-step 4-phase implementation plan, third-party Nigerian API integration guide (Paystack, Termii, Prembly/Dojah), and sprint deliverables. |
+| **[BRAND_STORY.md](file:///Users/ajibolagenius/Desktop/Krent/BRAND_STORY.md)** | Core brand narrative, mission, vision, origin story (*Key + Rent*), the 4 brand pillars, voice guidelines, slogans, and visual design system. |
+| **[KRENT_SPECIFICATION.md](file:///Users/ajibolagenius/Desktop/Krent/KRENT_SPECIFICATION.md)** | Complete product scope, personas, anti-fraud KYC engine, hyper-local filter matrix, escrow system, and Expo (React Native) technical architecture. |
+| **[MARKET_SURVEY_AND_BRANDING.md](file:///Users/ajibolagenius/Desktop/Krent/MARKET_SURVEY_AND_BRANDING.md)** | Nigerian proptech market survey, competitor pros/cons (NPC, PropertyPro, Spleet, SmallSmall, Fibre), white-space analysis, and brand name evaluation. |
+| **[DATABASE_SCHEMA.sql](file:///Users/ajibolagenius/Desktop/Krent/DATABASE_SCHEMA.sql)** | Production-ready PostgreSQL + PostGIS database schema tailored for Supabase, including RLS policies, indexing, and spatial query functions. |
+| **[PROJECT_ROADMAP.md](file:///Users/ajibolagenius/Desktop/Krent/PROJECT_ROADMAP.md)** | Step-by-step 4-phase implementation plan, third-party Nigerian API integration guide (Paystack, Termii, Prembly/Dojah), and sprint deliverables. |
 
 ---
 
