@@ -117,4 +117,5 @@ Krent Palette
 - **Typography:**
   - **Headings:** Plus Jakarta Sans (Bold / SemiBold) — Modern, structural, geometric.
   - **Body / Data:** Inter (Regular / Medium) — High legibility for pricing tables and attributes.
-- **Iconic Mark:** A modern minimalist glyph integrating a **Keyhole** into the roofline of a **Shelter**, symbolizing immediate access and protected sanctuary.
+  - **UI / Pills:** Space Mono (Regular / Bold) — Adds a distinct tech-forward, slightly quirky personality.
+- **Iconic Mark:** A modern minimalist glyph integrating a **Keyhole** into the roofline of a **Shelter**, symbolizing immediate access and protected sanctuary. Or we can find some new ideas.

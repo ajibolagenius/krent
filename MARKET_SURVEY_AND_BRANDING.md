@@ -115,5 +115,5 @@ Here is a strategic selection of alternative brand names tailored for Nigerian r
 - **Brand Origin:** Blend of **Key** + **Rent** (Unlocking seamless, verified shelter).
 - **Phonetics:** Single syllable, sharp, modern, memorable (comparable to modern fintechs like Kuda, Klarna, Stripe).
 - **Conversational Usage:** *"Just Krent it"*, *"Found my new flat on Krent"*, *"Rent without the wahala"*.
-- **Detailed Brand Architecture:** Detailed in [BRAND_STORY.md](file:///Users/ajibolagenius/Desktop/Krent/BRAND_STORY.md).
+- **Detailed Brand Architecture:** Detailed in [BRAND_STORY.md](../Krent/BRAND_STORY.md).
 
